@@ -59,7 +59,7 @@ head(df_scaled)
 #[5,] -0.9599458 -0.7875763
 #[6,] -0.9599458 -0.7875763
 ```
-# Determine Optimal Number of Columns
+### Determine Optimal Number of Columns
 
 ```R
 wssplot <- function(data, nc=15, seed=1234){
@@ -71,4 +71,15 @@ wssplot <- function(data, nc=15, seed=1234){
                      ylab="Within groups sum of squares")}
 
 wssplot(df_scaled)
+```
+
+```R
+set.seed(1234)
+nc <- NbClust(df_scaled, min.nc=2, max.nc=15, method="kmeans")
+
+table(nc$Best.n[1,])
+
+barplot(table(nc$Best.n[1,]),
+          xlab="Numer of Clusters", ylab="Number of Criteria",
+          main="Number of Clusters Chosen by 26 Criteria")
 ```
