@@ -65,7 +65,7 @@ barplot(table(nc$Best.n[1,]),
           xlab="Numer of Clusters", ylab="Number of Criteria",
           main="Number of Clusters Chosen by 26 Criteria")
 ```
-![n_clusters_bar](https://github.com/trevorwitter/Clustering/blob/master/n_clusters_bar.jpg)
+![n_clusters_bar](https://github.com/trevorwitter/Clustering/blob/master/n_clusters_bar_plot.jpg)
 
 ### Recalculate Centroids
 ```R
