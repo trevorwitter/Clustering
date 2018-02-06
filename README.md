@@ -41,12 +41,15 @@ wssplot(df_scaled)
 ![wss_plot](https://github.com/trevorwitter/Clustering/blob/master/wss_plot.jpg)
 
 ### Deterimine optimal number of clusters
+`NbClust()` is used to determine the best clustering scheme from the different results obtained by varying all combinations of number of clusters and distance methods.
+
 ```R
 library("NbClust")
 set.seed(1234)
 nc <- NbClust(df_scaled, min.nc=2, max.nc=15, method="kmeans")
 ```
 ![n_clusters](https://github.com/trevorwitter/Clustering/blob/master/n_clusters.jpg)
+
 
 ```R
 table(nc$Best.n[1,])
@@ -62,6 +65,7 @@ barplot(table(nc$Best.n[1,]),
           xlab="Numer of Clusters", ylab="Number of Criteria",
           main="Number of Clusters Chosen by 26 Criteria")
 ```
+![n_clusters_bar](https://github.com/trevorwitter/Clustering/blob/master/n_clusters_bar.jpg)
 
 ### Recalculate Centroids
 ```R
