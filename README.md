@@ -30,12 +30,13 @@ head(df)
 #5       5
 #6       5
 ```
-### Data preparation
-To prepare the dataset for clustering, we center and scale the columns using [`scale(x, center = TRUE, scale = TRUE)`](https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/scale).
+### Data Preparation
+To prepare the dataset for clustering, we center and scale the columns using [`scale(x, center = TRUE, scale = TRUE)`](https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/scale), where x is a matrix or dataframe.
 ```R
 df_scaled <- scale(df[-1])
 
 head(df_scaled)
+
 #volatile.acidity citric.acid residual.sugar   chlorides
 #[1,]        0.9615758   -1.391037    -0.45307667 -0.24363047
 #[2,]        1.9668271   -1.391037     0.04340257  0.22380518
@@ -57,4 +58,17 @@ head(df_scaled)
 #[4,] -0.5845942  0.4507074
 #[5,] -0.9599458 -0.7875763
 #[6,] -0.9599458 -0.7875763
+```
+# Determine Optimal Number of Columns
+
+```R
+wssplot <- function(data, nc=15, seed=1234){
+               wss <- (nrow(data)-1)*sum(apply(data,2,var))
+               for (i in 2:nc){
+                    set.seed(seed)
+                    wss[i] <- sum(kmeans(data, centers=i)$withinss)}
+                plot(1:nc, wss, type="b", xlab="Number of Clusters",
+                     ylab="Within groups sum of squares")}
+
+wssplot(df_scaled)
 ```
