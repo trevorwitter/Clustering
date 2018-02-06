@@ -18,6 +18,17 @@ head(df, n=2)
 #1       5
 #2       5
 ```
+|fixed.acidity | volatile.acidity | citric.acid | residual.sugar| chlorides |
+|--------------|------------------|-------------|---------------|-----------|
+|1 |         7.4  |           0.70    |    0.00        |    1.9   |  0.076 |
+|2 |          7.8 |           0.88  |      0.00   |         2.6 |    0.098 |
+
+|  free.sulfur.dioxide total.sulfur.dioxide density   pH sulphates alcohol
+#1                  11                   34  0.9978 3.51      0.56     9.4
+#2                  25                   67  0.9968 3.20      0.68     9.8
+#  quality
+#1       5
+#2       5
 ### Data Preparation
 To prepare the dataset for clustering, we center and scale the columns using [`scale(x, center = TRUE, scale = TRUE)`](https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/scale), where x is a matrix or dataframe.
 ```R
