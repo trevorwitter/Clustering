@@ -40,15 +40,21 @@ wssplot(df_scaled)
 ```
 ![wss_plot](https://github.com/trevorwitter/Clustering/blob/master/wss_plot.jpg)
 
+### Deterimine optimal number of clusters
 ```R
 library("NbClust")
 set.seed(1234)
 nc <- NbClust(df_scaled, min.nc=2, max.nc=15, method="kmeans")
 ```
+![n_clusters](https://github.com/trevorwitter/Clustering/blob/master/n_clusters.jpg)
 
 ```R
 table(nc$Best.n[1,])
+```
+|0 | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 15 | 
+|2 | 1 | 6 | 3 | 2 | 1 | 5 | 2 | 1 | 1 | 2 |
 
+```R
 barplot(table(nc$Best.n[1,]),
           xlab="Numer of Clusters", ylab="Number of Criteria",
           main="Number of Clusters Chosen by 26 Criteria")
