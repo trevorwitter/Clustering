@@ -41,15 +41,19 @@ wssplot(df_scaled)
 ![wss_plot](https://github.com/trevorwitter/Clustering/blob/master/wss_plot.jpg)
 
 ```R
+library("NbClust")
 set.seed(1234)
 nc <- NbClust(df_scaled, min.nc=2, max.nc=15, method="kmeans")
+```
 
+```R
 table(nc$Best.n[1,])
 
 barplot(table(nc$Best.n[1,]),
           xlab="Numer of Clusters", ylab="Number of Criteria",
           main="Number of Clusters Chosen by 26 Criteria")
 ```
+
 ### Recalculate Centroids
 ```R
 set.seed(1234)
