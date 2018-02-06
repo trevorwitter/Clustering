@@ -50,7 +50,7 @@ nc <- NbClust(df_scaled, min.nc=2, max.nc=15, method="kmeans")
 ```
 ![n_clusters](https://github.com/trevorwitter/Clustering/blob/master/n_clusters.jpg)
 
-
+Optimal number of clusters is determined as the number of clusters selected by the highest number of criteria. This can be visualized as a table:
 ```R
 table(nc$Best.n[1,])
 ```
@@ -58,8 +58,9 @@ table(nc$Best.n[1,])
 | | | | | | | | | | | | |
 |--|--|--|--|--|--|--|--|--|--|--|--|
 |n clusters| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 9 | 10 | 15 | 
-| n | 2 | 1 | 6 | 3 | 2 | 1 | 5 | 2 | 1 | 1 | 2 |
+| n criteria | 2 | 1 | 6 | 3 | 2 | 1 | 5 | 2 | 1 | 1 | 2 |
 
+Or as a barplot:
 ```R
 barplot(table(nc$Best.n[1,]),
           xlab="Numer of Clusters", ylab="Number of Criteria",
