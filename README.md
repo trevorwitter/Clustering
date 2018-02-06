@@ -38,6 +38,7 @@ wssplot <- function(data, nc=15, seed=1234){
 
 wssplot(df_scaled)
 ```
+![wss_plot](https://github.com/trevorwitter/Clustering/blob/master/wss_plot.jpg)
 
 ```R
 set.seed(1234)
