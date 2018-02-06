@@ -20,16 +20,6 @@ To prepare the dataset for clustering, we center and scale the columns using [`s
 df_scaled <- scale(df[-1])
 
 head(df_scaled, n=2)
-
-#volatile.acidity citric.acid residual.sugar   chlorides
-#[1,]        0.9615758   -1.391037    -0.45307667 -0.24363047
-#[2,]        1.9668271   -1.391037     0.04340257  0.22380518
-#     free.sulfur.dioxide total.sulfur.dioxide    density         pH   sulphates
-#[1,]         -0.46604672           -0.3790141 0.55809987  1.2882399 -0.57902538
-#[2,]          0.87236532            0.6241680 0.02825193 -0.7197081  0.12891007
-#        alcohol    quality
-#[1,] -0.9599458 -0.7875763
-#[2,] -0.5845942 -0.7875763
 ```
 |volatile.acidity | citric.acid | residual.sugar | chlorides | free.sulfur.dioxide | total.sulfur.dioxide | density | pH | sulphates | alcohol | quality |
 |--|--|--|--|--|--|--|--|--|--|--|
