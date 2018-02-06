@@ -13,7 +13,8 @@ head(df, n=2)
 |1 |         7.4  |           0.70    |    0.00        |    1.9   |  0.076 | 11 | 34 | 0.9978 | 3.51 | 0.56 | 9.4 | 5 |
 |2 |          7.8 |           0.88  |      0.00   |         2.6 |    0.098 | 25 | 67 | 0.9968 | 3.20 | 0.68 | 9.8 | 5 |
 
-\
+
+
 ### Data Preparation
 To prepare the dataset for clustering, we center and scale the columns using [`scale(x, center = TRUE, scale = TRUE)`](https://www.rdocumentation.org/packages/base/versions/3.4.3/topics/scale), where x is a matrix or dataframe.
 ```R
