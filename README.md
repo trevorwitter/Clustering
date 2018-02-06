@@ -28,8 +28,8 @@ head(df_scaled, n=2)
 | 1.9668271 | -1.391037 | 0.04340257 | 0.22380518 | 0.87236532 | 0.6241680 | 0.02825193 | -0.7197081 | 0.12891007 | -0.5845942 | -0.7875763|
 
 
-### Determine Optimal Number of Columns
 
+### Determine Optimal Number of Columns
 ```R
 wssplot <- function(data, nc=15, seed=1234){
                wss <- (nrow(data)-1)*sum(apply(data,2,var))
@@ -42,6 +42,7 @@ wssplot <- function(data, nc=15, seed=1234){
 wssplot(df_scaled)
 ```
 ![wss_plot](https://github.com/trevorwitter/Clustering/blob/master/wss_plot.jpg)
+
 
 
 ### Deterimine optimal number of clusters
@@ -72,6 +73,7 @@ barplot(table(nc$Best.n[1,]),
           main="Number of Clusters Chosen by 26 Criteria")
 ```
 ![n_clusters_bar](https://github.com/trevorwitter/Clustering/blob/master/n_clusters_bar_plot.jpg)
+
 
 
 ### Recalculate Centroids
