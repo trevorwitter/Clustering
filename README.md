@@ -55,6 +55,7 @@ nc <- NbClust(df_scaled, min.nc=2, max.nc=15, method="kmeans")
 ```
 ![n_clusters](https://github.com/trevorwitter/Clustering/blob/master/n_clusters.jpg)
 
+In these two figures, Dindex refers to the [Dunn index](https://en.wikipedia.org/wiki/Dunn_index). Higher Dunn index values indicate better clustering. 
 
 Optimal number of clusters is determined as the number of clusters selected by the highest number of criteria. This can be visualized as a table:
 ```R
