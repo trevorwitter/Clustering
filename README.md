@@ -46,7 +46,7 @@ wssplot(df_scaled)
 
 
 ### Deterimine optimal number of clusters
-`NbClust()` is used to determine the best clustering scheme from the different results obtained by varying all combinations of number of clusters and distance methods.
+[`NbClust()`](https://www.rdocumentation.org/packages/NbClust/versions/3.0/topics/NbClust) is used to determine the best clustering scheme from the different results obtained by varying all combinations of number of clusters and distance methods.
 
 ```R
 library("NbClust")
