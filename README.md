@@ -83,7 +83,7 @@ barplot(table(nc$Best.n[1,]),
           xlab="Numer of Clusters", ylab="Number of Criteria",
           main="Number of Clusters Chosen by 26 Criteria")
 ```
-### Recalculate Centeroids
+### Recalculate Centroids
 ```R
 set.seed(1234)
 fit.km <- kmeans(df, 3, nstart=25)
