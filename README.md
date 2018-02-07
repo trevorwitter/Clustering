@@ -1,7 +1,7 @@
 # K-means Clustering in R
 Example k-means clustering analysis of red wine in R
 
-Sample dataset on red wine samples used from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality)
+Sample dataset on red wine samples used from [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality).
 Code adapted from Robert I. Kabacoff's [R in Action](https://www.manning.com/books/r-in-action)
 
 ```R
