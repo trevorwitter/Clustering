@@ -67,14 +67,26 @@ barplot(table(nc$Best.n[1,]),
 
 
 
-### Recalculate Centroids
+### K-means cluster analysis
+[`kmeans()`](https://www.rdocumentation.org/packages/stats/versions/3.4.3/topics/kmeans) is used to obtain the final clustering solution.  
 ```R
 set.seed(1234)
-fit.km <- kmeans(df, 3, nstart=25)
-
+fit.km <- kmeans(df, 2, nstart=25)
+```
+`fit.km$size` returns the number of items in each cluster
+```R
 fit.km$size
+```
+`[1] 1179  420`
 
+`fit.km$centers` returns the central value for each cluster
+```R
 fit.km$centers
-
+```
+|fixed.acidity | volatile.acidity | citric.acid | residual.sugar| chlorides | free.sulfur.dioxide |total.sulfur.dioxide | density |  pH | sulphates | alcohol | quality |
+|--|--|--|--|--|--|--|--|--|--|--|
+| 8.424258 | 0.5193342 | 0.2665394 | 2.394275 | 0.08544614 | 12.37193 | 30.34436 | 0.9966768 | 3.315522 | 0.6565310 | 10.54022 | 5.724343 |
+| 8.025952 | 0.5516429 | 0.2834286 | 2.944524 | 0.09313810 | 25.70833 | 91.72857 | 0.9969427 | 3.298738 | 0.6626905 | 10.09389 | 5.388095 |
+```R
 aggregate(df[-1], by=list(cluster=fit.km$cluster),mean)
 ```
